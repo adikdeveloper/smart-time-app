@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soat, Sekundomer va Taymer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab-container">
+            <button class="tab-btn active" data-tab="clock">Soat</button>
+            <button class="tab-btn" data-tab="stopwatch">Sekundomer</button>
+            <button class="tab-btn" data-tab="timer">Taymer</button>
+        </div>
+
+        <!-- Soat qismi -->
+        <div class="tab-content active" id="clock">
+            <div class="clock-container">
+                <div class="date-display"></div>
+                <div class="clock-display"></div>
+            </div>
+        </div>
+
+        <!-- Sekundomer qismi -->
+        <div class="tab-content" id="stopwatch">
+            <div class="stopwatch-container">
+                <div class="stopwatch-display">00:00:00.00</div>
+                <div class="controls">
+                    <button class="btn btn-start" id="stopwatchStart">Boshlash</button>
+                    <button class="btn btn-lap" id="stopwatchLap" disabled>Davr</button>
+                    <button class="btn btn-reset" id="stopwatchReset" disabled>Tozalash</button>
+                </div>
+                <div class="lap-times"></div>
+            </div>
+        </div>
+
+        <!-- Taymer qismi -->
+        <div class="tab-content" id="timer">
+            <div class="timer-container">
+                <div class="timer-inputs">
+                    <div class="timer-input-group">
+                        <input type="number" class="timer-input" id="hours" min="0" max="99" placeholder="00">
+                        <label>Soat</label>
+                    </div>
+                    <div class="timer-input-group">
+                        <input type="number" class="timer-input" id="minutes" min="0" max="59" placeholder="00">
+                        <label>Daqiqa</label>
+                    </div>
+                    <div class="timer-input-group">
+                        <input type="number" class="timer-input" id="seconds" min="0" max="59" placeholder="00">
+                        <label>Soniya</label>
+                    </div>
+                </div>
+                <div class="timer-display">00:00:00</div>
+                <div class="controls">
+                    <button class="btn btn-start" id="timerStart">Boshlash</button>
+                    <button class="btn btn-stop" id="timerStop" disabled>To'xtatish</button>
+                    <button class="btn btn-reset" id="timerReset" disabled>Tozalash</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio for timer -->
+    <audio id="timerSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
